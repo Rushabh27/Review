@@ -101,9 +101,6 @@ namespace review.Controllers
                 var context = new reviewmodeldb();
                 context.Users.Add(model);
                 context.SaveChanges();
-
-
-
                 return RedirectToAction("Login");
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
