@@ -1,0 +1,83 @@
+﻿@using review.Models
+@model Tuple<user,Review>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>User Details</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item1.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item1.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item1.Password)
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Item1.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Item1.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Item1.Password)
+        </td>
+    </tr>
+</table>
+
+<div>
+    <h2>Review Details</h2>
+    <hr />
+    
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Item2.Product.productname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item2.user.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item2.content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item2.rating)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var c in ViewBag.view)
+        {
+            <tr>
+                <td>
+                    @c.Product.productname
+                </td>
+                <td>
+                    @c.user.name
+                </td>
+                <td>
+                    @c.content
+                </td>
+                <td>
+                    @for (int i = 0; i < c.rating; i++)
+                    {
+                        <span class="glyphicon glyphicon-star" style="color:yellow"></span>
+                    }
+                    @for (int i = c.rating; i < 5; i++)
+                    {
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = c.Id })
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>

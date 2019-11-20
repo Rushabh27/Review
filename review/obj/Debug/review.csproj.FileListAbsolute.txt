@@ -77,6 +77,6 @@ C:\Users\VIPUL\source\repos\review\review\bin\EntityFramework.dll
 C:\Users\VIPUL\source\repos\review\review\bin\EntityFramework.SqlServer.dll
 C:\Users\VIPUL\source\repos\review\review\bin\EntityFramework.xml
 C:\Users\VIPUL\source\repos\review\review\bin\EntityFramework.SqlServer.xml
-C:\Users\VIPUL\source\repos\review\review\obj\Debug\review.csprojAssemblyReference.cache
 C:\Users\VIPUL\source\repos\review\review\obj\Debug\review.Migrations.initialdb.resources
 C:\Users\VIPUL\source\repos\review\review\obj\Debug\review.csproj.GenerateResource.cache
+C:\Users\VIPUL\source\repos\review\review\obj\Debug\review.csprojAssemblyReference.cache

@@ -32,6 +32,7 @@ namespace review.Controllers
             Review rev = db.Reviews.Find(id);
             var rev1 = db.Reviews.Where(d => d.productId == id).ToList();
             ViewBag.pass = rev1;
+            ViewBag.c = rev1.Count();
             var tup = new Tuple<product, Review>(pro, rev);
             
             return View(tup);

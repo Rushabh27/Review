@@ -189,9 +189,12 @@
     <Content Include="Content\images\cloth_1.jpg" />
     <Content Include="Content\images\cloth_2.jpg" />
     <Content Include="Content\images\cloth_3.jpg" />
+    <Content Include="Content\images\ec.jpg" />
     <Content Include="Content\images\five.jfif" />
+    <Content Include="Content\images\games.jpg" />
     <Content Include="Content\images\hero_1.jpg" />
     <Content Include="Content\images\hero_1.png" />
+    <Content Include="Content\images\hotels.jpg" />
     <Content Include="Content\images\men.jpg" />
     <Content Include="Content\images\movie.jpg" />
     <Content Include="Content\images\person_1.jpg" />
@@ -239,7 +242,6 @@
     <Content Include="Content\js\slick.min.js" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -342,6 +344,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\productsreviewapp - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -411,10 +414,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />

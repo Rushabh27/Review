@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="@Url.Content("~/Content/css/main.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/util.css")" rel="stylesheet" type="text/css" />
+    @Scripts.Render("~/Contents/sjs/ll.js")
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap.min.css")">
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Review", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                @if (Session["admin"] != null)
+                {
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Users", "Index", "users")</li>
+                        <li> @Html.ActionLink("Products", "Index", "Products")</li>
+                        <li> @Html.ActionLink("Categories", "Index", "categories")</li>
+                        <li> @Html.ActionLink("Subcategories", "Index", "subcategories")</li>
+                        <li> @Html.ActionLink("Suggestions", "Index", "suggestions")</li>
+                        <li> @Html.ActionLink("Logout", "adminlogout", "Account")</li>
+                    </ul>
+                }
+                
+                @if (Session["admin"] == null)
+                {
+                    <ul class="nav navbar-nav">
+                        <!--<li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>-->
+                        <li>@Html.ActionLink("Give Suggestion", "Create", "suggestions")</li>
+                        <li>@Html.ActionLink("Category", "Index", "categories")</li>
+                        @if (Session["email"] != null)
+                        {
+                            <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                            <li>@Html.ActionLink("" + Session["email"], "Index", "Account")</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Register", "Registeruser", "Account")</li>
+                            <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                        }
+                        <li>
+                            @using (Html.BeginForm("search", "Home", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                            {
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="search" name="search" placeholder="Search Here">
+                                    <button type="submit" class="btn btn-primary mb-2">Search</button>
+                                </div>
+                            }
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
