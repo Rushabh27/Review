@@ -74,8 +74,6 @@ C:\Users\VIPUL\source\repos\review\review\bin\Newtonsoft.Json.xml
 C:\Users\VIPUL\source\repos\review\review\bin\Antlr3.Runtime.pdb
 C:\Users\VIPUL\source\repos\review\review\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\VIPUL\source\repos\review\review\obj\Release\review.csprojAssemblyReference.cache
-C:\Users\VIPUL\source\repos\review\review\obj\Release\review.Migrations.initialdb.resources
-C:\Users\VIPUL\source\repos\review\review\obj\Release\review.csproj.GenerateResource.cache
 C:\Users\VIPUL\source\repos\review\review\obj\Release\review.csproj.CoreCompileInputs.cache
 C:\Users\VIPUL\source\repos\review\review\obj\Release\review.csproj.CopyComplete
 C:\Users\VIPUL\source\repos\review\review\obj\Release\review.dll

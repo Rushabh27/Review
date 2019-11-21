@@ -109,23 +109,7 @@
             <div class="text-center">
                 <h2>Latest Products</h2>
             </div>
-            @foreach (var item in ViewBag.p)
-            {
-
-
-                <div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <img src=" @Url.Content(item.img) " width="250px" height="250px" alt="item" />
-                    @{
-                        string s = @item.productname.ToString();
-                    }
-                    <p>@Html.ActionLink(s, "Details", "reviews", new { id = @item.Id }, null)</p>
-                    @* <h2>  @Html.ActionLink(item.Name, "Details", "products", new { id = item.Id }, null)</h2>*@
-
-                </div>
-
-
-            }
-
+       
 
         </div>
     </div>
