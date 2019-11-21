@@ -25,7 +25,7 @@ namespace review.Controllers
                 else
                 {
              
-                    return View(db.Products.FirstOrDefault(d => d.productname == search));
+                    return View(db.Products.Where(d => d.productname.Contains(search)).ToList());
                 }
             }
             return View(db.Products.FirstOrDefault(d => d.productname == search));
