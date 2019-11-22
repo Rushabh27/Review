@@ -3,4 +3,7 @@
   <parameter name="reviewmodeldb-Web.config Connection String" description="reviewmodeldb Connection String used in web.config by the application to access the database." defaultValue="data source=(LocalDb)\MSSQLLocalDB;initial catalog=review.Models.reviewmodeldb;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\VIPUL\\source\\repos\\review\\review\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='reviewmodeldb']/@connectionString" />
   </parameter>
+  <parameter name="reviewmodeldb_DatabasePublish-Web.config Connection String" description="reviewmodeldb_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="reviewmodeldb_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\VIPUL\\source\\repos\\review\\review\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='reviewmodeldb_DatabasePublish']/@connectionString" />
+  </parameter>
 </parameters>

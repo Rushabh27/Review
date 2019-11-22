@@ -9,7 +9,7 @@ namespace review.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(review.Models.reviewmodeldb context)

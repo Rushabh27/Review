@@ -193,14 +193,17 @@
     <Content Include="Content\images\hotels.jpg" />
     <Content Include="Content\images\men.jpg" />
     <Content Include="Content\images\movie.jpg" />
+    <Content Include="Content\images\neel.jpg" />
     <Content Include="Content\images\person_1.jpg" />
     <Content Include="Content\images\person_2.jpg" />
     <Content Include="Content\images\person_3.jpg" />
     <Content Include="Content\images\person_4.jpg" />
     <Content Include="Content\images\rev.jpg" />
     <Content Include="Content\images\rev1.jpg" />
+    <Content Include="Content\images\rushabh.jpg" />
     <Content Include="Content\images\shoe.png" />
     <Content Include="Content\images\shoe_1.jpg" />
+    <Content Include="Content\images\tanuj.jpg" />
     <Content Include="Content\img\1.jpg" />
     <Content Include="Content\img\10.jpg" />
     <Content Include="Content\img\11.jpg" />
@@ -349,6 +352,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\review20191121075119 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -416,7 +420,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />

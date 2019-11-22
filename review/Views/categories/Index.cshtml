@@ -3,60 +3,60 @@
 @{
     ViewBag.Title = "Index";
 }
-@if (Session["admin"] != null)
-{
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th></th>
-        </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(model => item.Name)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
-        }
-
-    </table>
-
-}
 <html>
 <head>
     <link href="@Url.Content("~/Content/css/cat.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
-    @if(Session["admin"]==null)
+    @if (Session["admin"] != null)
     {
-    <div class="wrapper">
-        <h1>Categories</h1>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+            </tr>
 
-
-        <div class="clear"></div>
-        <!-- items -->
-        <div class="items">
             @foreach (var item in Model)
             {
-                <div class="item">
-                    <img src=" @Url.Content(item.img) " width="250px" height="250px" alt="item" />
-                    <h2> @Html.ActionLink(item.Name, "Details", "subcategories", new { id = item.Id }, null)</h2>
-                </div>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
             }
+
+        </table>
+
+    }
+    @if (Session["admin"] == null)
+    {
+        <div class="wrapper">
+            <h1>Categories</h1>
+
+
+            <div class="clear"></div>
+            <!-- items -->
+            <div class="items">
+                @foreach (var item in Model)
+                {
+                    <div class="item">
+                        <img src=" @Url.Content(item.img) " width="250px" height="250px" alt="item" />
+                        <h2> @Html.ActionLink(item.Name, "Details", "subcategories", new { id = item.Id }, null)</h2>
+                    </div>
+                }
+            </div>
         </div>
-    </div>
 
     }
 

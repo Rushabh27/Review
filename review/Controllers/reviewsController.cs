@@ -34,7 +34,8 @@ namespace review.Controllers
             ViewBag.pass = rev1;
             ViewBag.c = rev1.Count();
             var tup = new Tuple<product, Review>(pro, rev);
-            
+            ViewBag.cat = pro.catId;
+            ViewBag.sub = pro.subcatId;
             return View(tup);
         }
         [HttpPost]

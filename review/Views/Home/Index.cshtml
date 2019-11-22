@@ -13,7 +13,7 @@
     <!-- Bootstrap -->
     <link href="@Url.Content("~/Content/css1/bootstrap.min.css")" rel="stylesheet">
     <link rel="stylesheet" href="@Url.Content("~/Content/css1/font-awesome.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/css1/animate.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css1/animate.css")">z
     <link href="@Url.Content("~/Content/css1/animate.min.css")" rel="stylesheet">
     <link href="@Url.Content("~/Content/css1/style.css")" rel="stylesheet" />
     <!-- =======================================================
@@ -109,7 +109,22 @@
             <div class="text-center">
                 <h2>Latest Products</h2>
             </div>
-       
+            @foreach (var item in ViewBag.p)
+            {
+
+
+                <div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <img src=" @Url.Content(item.img) " width="250px" height="250px" alt="item" />
+                    @{
+                        string s = @item.productname.ToString();
+                    }
+                    <p>@Html.ActionLink(s, "Details", "reviews", new { id = @item.Id }, null)</p>
+                    @* <h2>  @Html.ActionLink(item.Name, "Details", "products", new { id = item.Id }, null)</h2>*@
+
+                </div>
+
+
+            }
 
         </div>
     </div>
@@ -163,7 +178,7 @@
                     </div>
                     <div class="team-hover">
                         <div class="desk">
-                            <h4>Hi There !</h4>
+                          
                             <p>I love to introduce myself as a hardcore Web Designer.</p>
                         </div>
                         <div class="s-link">
@@ -185,8 +200,8 @@
                     </div>
                     <div class="team-hover">
                         <div class="desk">
-                            <h4>Hello World</h4>
-                            <p>I love to introduce myself as a hardcore Web Designer.</p>
+                          
+                            <p>I love to introduce myself as a Web Designer.</p>
                         </div>
                         <div class="s-link">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -207,7 +222,7 @@
                     </div>
                     <div class="team-hover">
                         <div class="desk">
-                            <h4>I love to design</h4>
+                            
                             <p>I love to introduce myself as a hardcore Web Designer.</p>
                         </div>
                         <div class="s-link">
