@@ -17,7 +17,7 @@ namespace review.Controllers
             var m = Session["email"].ToString();
             var ids = db.Users.FirstOrDefault(d => d.email == m);
             var r = db.Reviews.FirstOrDefault(d => d.userId == ids.id);
-            var re = db.Reviews.Where(d => d.userId == ids.id);
+            var re = db.Reviews.Where(d => d.userId == ids.id).ToList();
             ViewBag.view = re;
             var t = new Tuple<user, Review>(ids, r);
             return View(t);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Dynamic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -20,7 +21,7 @@ namespace review.Controllers
         {
             return View(db.Products.ToList());
         }
-
+        
         // GET: products/Details/5
         public ActionResult Details(int? id)
         {
@@ -35,13 +36,34 @@ namespace review.Controllers
             
             return View(pt);
         }
-
+        
+        
         // GET: products/Create
         public ActionResult Create()
         {
             return View();
         }
-
+        public ActionResult Upload()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase uploadfile)
+        {
+            if (uploadfile != null && uploadfile.FileName!="")
+            {
+                string pic = Path.GetFileName(uploadfile.FileName);
+                string p = Path.Combine(Server.MapPath("~/Content/images/"), pic);
+                uploadfile.SaveAs(p);
+                ViewBag.fil = "~/Content/images/" + pic;
+                
+            }
+            else
+            {
+                ViewBag.fil = "null";
+            }
+            return View("Create");
+        }
         // POST: products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -51,12 +73,15 @@ namespace review.Controllers
         {
             if (ModelState.IsValid)
             {
+                ViewBag.i = product.img;
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View(product);
+            else {
+                return View("Index");
+            }
+            
         }
 
         // GET: products/Edit/5

@@ -35,7 +35,7 @@ namespace review.Controllers
         {
             var pro = db.Products.OrderByDescending(r => r.Id).Take(4);
             ViewBag.p = pro;
-            var lastFiveProducts = db.Reviews.OrderByDescending(p=>p.Id).Take(2);
+            var lastFiveProducts = db.Reviews.OrderByDescending(p=>p.Id).Take(2).ToList();
             return View(lastFiveProducts);
         }
 

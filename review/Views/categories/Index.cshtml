@@ -9,8 +9,11 @@
     <link href="@Url.Content("~/Content/css/cat.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <hr>
     @if (Session["admin"] != null)
     {
+        <hr>
+        <br>
         <p>
             @Html.ActionLink("Create New", "Create")
         </p>

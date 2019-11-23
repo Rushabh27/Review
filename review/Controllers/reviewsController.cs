@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using review.Models;
@@ -34,8 +35,13 @@ namespace review.Controllers
             ViewBag.pass = rev1;
             ViewBag.c = rev1.Count();
             var tup = new Tuple<product, Review>(pro, rev);
-            ViewBag.cat = pro.catId;
-            ViewBag.sub = pro.subcatId;
+            var t = pro.catId;
+            category c = db.categories.Find(t);
+            ViewBag.cat = c.Name;
+            var r = pro.subcatId;
+            subcategory s = db.subcategories.Find(r);
+            ViewBag.sub = s.Name;
+            
             return View(tup);
         }
         [HttpPost]
@@ -51,6 +57,7 @@ namespace review.Controllers
             {
                 var mail = Session["email"].ToString();
                 // user user = db.Users.Find(Id);
+                var k = db.Products.Find(Id);
                 var ids = db.Users.FirstOrDefault(d => d.email == mail);
                 db.Reviews.Add(new Review
                 {
@@ -60,7 +67,30 @@ namespace review.Controllers
                     userId = ids.id,
                     dape_post = DateTime.Now
                 });
+
                 db.SaveChanges();
+                var senderEmail = new MailAddress("rushabh.dholakia05@gmail.com", "rushabh@27");
+                var receiverEmail = new MailAddress(ids.email, "Receiver");
+                var password = "rushabh@27";
+                
+                var body = "Thank you For Review " + content+"For the product"+k.productname;
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(senderEmail.Address, password)
+                };
+                using (var mess = new MailMessage(senderEmail, receiverEmail)
+                {
+                    Subject = "Thank you",
+                    Body = body
+                })
+                {
+                    smtp.Send(mess);
+                }
             }
                 //var ids = (from x in db.Users where email == mail select x).FirstOrDefault();
         return RedirectToAction("Details");
